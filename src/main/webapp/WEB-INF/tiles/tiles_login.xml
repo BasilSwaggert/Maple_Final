@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+ "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+ "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+		
+<tiles-definitions>
+
+	<definition name="login.index" extends="template_empty">
+		<put-attribute name="content" value="/WEB-INF/views/login/index.jsp"></put-attribute>
+	</definition>
+	<definition name="login.accessDenied" extends="template_empty">
+		<put-attribute name="content" value="/WEB-INF/views/login/accessDenied.jsp"></put-attribute>
+	</definition>
+
+</tiles-definitions>
