@@ -12,35 +12,27 @@ import com.caseStudy.spring.repositories.StatusRepository;
 @Service("statusService")
 public class StatusServiceImpl implements StatusService{
 
-//    @Autowired
-//    private StatusRepository statusRepository;
-//
-//
-//    @Override
-//    public Iterable<Status> findAll() {
-//        return statusRepository.findAll();
-//    }
-//
-////    @Override
-////    public Status find(int id) {
-////        return statusRepository.findById(id).get();
-////    }
-//
-//    @Override
-//    public Status save(Status status) {
-//        return statusRepository.save(status);
-//    }
-//
-//    @Override
-//    public void delete(int id) {
-//    	statusRepository.deleteById(id);
-//    }
-//
-//  //Placeholder until .get() is fixed
-//	@Override
-//	public Status find(int id) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+	@Autowired
+    private StatusRepository statusRepository;
 
+
+    @Override
+    public Iterable<Status> findAll() {
+        return statusRepository.findAll();
+    }
+
+    @Override
+    public Status find(int id) {
+        return statusRepository.findById(id).get();
+    }
+
+    @Override
+    public Status save(Status status) {
+        return statusRepository.save(status);
+    }
+
+    @Override
+    public void delete(int id) {
+    	statusRepository.deleteById(id);
+    }
 }

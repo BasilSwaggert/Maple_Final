@@ -5,8 +5,8 @@
 		
 <tiles-definitions>
 
-	<definition name="dashboard.index" extends="my_template">
-		<put-attribute name="content" value="/WEB-INF/views/dashboard/index.jsp"/>
+	<definition name="tickets.send" extends="my_template">
+		<put-attribute name="content" value="/WEB-INF/views/tickets/send.jsp"></put-attribute>
 	</definition>
 
 </tiles-definitions>

@@ -11,7 +11,7 @@
 	<h3>Access Denied to the Client Panel</h3>
 	${msg}
 	<br>
-	<a href="${pageContext.request.contextPath }/customer-panel"></a>
+	<a href="${pageContext.request.contextPath }/customer-panel">Back</a>
 
 </body>
 </html>

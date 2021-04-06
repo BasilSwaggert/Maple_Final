@@ -6,11 +6,11 @@
 <tiles-definitions>
 
 	<definition name="my_template" template="/WEB-INF/views/templates/my_templates.jsp">
-		<put-attribute name="content" value=""></put-attribute>
+		<put-attribute name="content" value=""/>
 	</definition>
 	
 	<definition name="template_empty" template="/WEB-INF/views/templates/template_empty.jsp">
-		<put-attribute name="content" value=""></put-attribute>
+		<put-attribute name="content" value=""/>
 	</definition>
 
 </tiles-definitions>

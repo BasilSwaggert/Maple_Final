@@ -7,7 +7,9 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.caseStudy.spring.services.UsersService;
 
@@ -24,13 +26,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         httpSecurity.cors().and().csrf().disable();
         
         httpSecurity.authorizeRequests()
-        			.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
-        			.antMatchers("/employee/**").access("hasRole('ROLE_EMPLOYEE')")
+        			.antMatchers("/dashboard/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')")
+        			.antMatchers("/users/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')")
         			.and()
         			.formLogin()
         			.loginPage("/login-panel")
         			.loginProcessingUrl("/login/process-login")
-        			.defaultSuccessUrl("/login-panel/welcome")
+        			.defaultSuccessUrl("/login-panel/welcome", true)
         			.failureUrl("/login-panel/login?error")
         			.usernameParameter("username")
         			.passwordParameter("password")
@@ -84,12 +86,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder builder) throws Exception {
-        builder.userDetailsService(usersService);
+        builder.userDetailsService(usersService).passwordEncoder(encoder());
     }
 
     @Bean
     public BCryptPasswordEncoder encoder() {
-        return new BCryptPasswordEncoder();
+    	BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        return bCryptPasswordEncoder;
     }
     
 }

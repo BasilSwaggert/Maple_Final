@@ -9,7 +9,7 @@
   <title>MAPLE | Dashboard </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-   new="viewport">
+    new="viewport">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/fontawesome-free/css/all.min.css">
@@ -55,22 +55,40 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       
+      
     </ul>
    
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
-            class="fas fa-th-large"></i></a>
-      </li>
-    </ul>
+    <div class="navbar-custom-menu">
+    	<ul class= "nav navbar-nav">
+    		
+    		<!-- Part 5 User Account: style can be found in dropdown.less FILL OUT LATER -->
+    		<li class="dropdown user user-menu"><a href="#" class="pull-right-container" 
+    			data-toggle="dropdown"> <span class="#">Welcome ${pageContext.request.userPrincipal.name}</span>
+    		</a>
+    			<ul class="dropdown-menu">
+    			
+    			<!-- Menu Footer -->
+    			<li class="user-footer">
+    				<div class="pull-left">
+    					<a href=""${pageContext.request.contextPath}/users/profile" class="btn btn-default btn-flat">Profile</a>
+    				</div>
+    				<div class="pull-right">
+    					<a href="${pageContext.request.contextPath}/process-logout" class="btn btn-default btn-flat">Sign Out</a>
+    				</div>
+    				</li>
+    				</ul>
+    				</li>
+    	</ul>
+    </div>
   </nav>
   <!-- /.navbar -->
+  
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="#" class="brand-link">
       <span class="brand-text font-weight-light">MAPLE</span>
     </a>
 
@@ -80,6 +98,7 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         
       </div>
+      
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -93,26 +112,36 @@
 		
 		<ul class="sidebar-menu" data-widget="tree">
           
-          <li class="nav-item has treeview menu-open"><a href="#"><i class="fa fa-laptop"></i>
-          		<span>UI Elements</span> <span class="pull-right-container">
-          			<i class="fa fa-angle-left pull right"></i>
+          <li class="treeview"><a href="#"><i class="fa fa-laptop"></i>
+          		<span>Category</span> <span class="pull-right-container">
+          			<i class="fa fa-angle-left pull-right"></i>
           	</span>
         </a>
-        		<ul class="nav nav-treeview" style="display: block;">
-        			<li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i>
-        		 	General</a></li>
-        		 	<li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i>
-        		 	Icons</a></li>
-        		 	<li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i>
-        		 	Buttons</a></li>
-        		 	<li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i>
-        		 	Sliders</a></li>
-        		 	<li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i>
-        		 	Timeline</a></li>
-        		 	<li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i>
-        		 	Modals</a></li>
+        		<ul class="treeview-menu">
+        			<li><a href="${pageContext.request.contextPath}/category/add"><i 
+        				class="fa fa-circle-o"></i>
+        		 	Add</a></li>
+        		 	<li><a href="${pageContext.request.contextPath}/category/index"><i 
+        		 		class="fa fa-circle-o"></i>
+        		 	List</a></li>
         	
         	</ul></li>
+        	
+        <li class="treeview"><a href="#"> <i class="fa fa-laptop"></i>
+        	<span>Status</span> <span class="pull-right-container">
+        		<i class="fa fa-angle-left pull-right"></i>
+        		</span>
+        	</a>
+        		<ul class="treeview-menu">
+        			<li><a href="${pageContext.request.contextPath}/status/add"><i
+        				class="fa fa-circle-o"></i>
+        				Add</a></li>
+        			<li><a href="${pageContext.request.contextPath}/status/index"><i
+        				class="fa fa-circle-o"></i>
+        				List</a></li>
+        		
+        		</ul></li>
+        	
         	</ul>
         	</section>
           </aside>

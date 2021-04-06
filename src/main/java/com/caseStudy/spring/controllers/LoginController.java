@@ -4,7 +4,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,12 +11,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping(value = { "", "login-panel" })
 public class LoginController {
+	
 		
     @RequestMapping(value = { "", "index" }, method = RequestMethod.GET)
     public String index() {
+    	BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = "123";
-        String hash = new BCryptPasswordEncoder().encode("123");
-        System.out.println(hash);
+        String encodedPassword = passwordEncoder.encode(password);
+        System.out.println();
+        System.out.println("Password is: " + password);
+        System.out.println("Encoded password is: " + encodedPassword);
+        System.out.println();
+        
+        boolean isPasswordMatch = passwordEncoder.matches(password, encodedPassword);
+        System.out.println("Password : " + password + "   isPasswordMatch    : " + isPasswordMatch);
         return "redirect:/login-panel/login";
     }
 

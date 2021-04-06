@@ -12,8 +12,4 @@ import com.caseStudy.spring.entities.Tickets;
 @Repository("ticketsRepository")
 public interface TicketsRepository extends CrudRepository<Tickets, Integer> {
 
-//    @Query
-//    public List<Tickets> findTicketsById(@Param("id") int id);
-//
-//	public Object findById(int id);
 }
