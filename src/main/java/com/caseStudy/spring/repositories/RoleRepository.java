@@ -10,5 +10,7 @@ import com.caseStudy.spring.entities.Role;
 
 @Repository("roleRepository")
 public interface RoleRepository extends JpaRepository<Role, Integer> {
+	
+	//Repository for many of the CRUD methods used in tandem with Roles.
 
 }

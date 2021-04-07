@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 @Entity
 public class Comments implements Serializable {
 	
+	//Necessary static variable
 	private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

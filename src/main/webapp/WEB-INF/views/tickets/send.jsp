@@ -5,11 +5,11 @@
 
     <section class="content-header">
     	<h1>
-    		Add Users
+    		Send Ticket
     	</h1><br>
     	<ol class="breadcrumb">
     		<li><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
-    		<li class="active">Add Users</li>
+    		<li class="active">Send Ticket</li>
     	</ol>
     </section>
     
@@ -26,51 +26,38 @@
             			<h4>${err }</h4>
             		</div>
             	</c:if>
+            	
+            	<c:if test="${success != null }">
+            		<div class="callout callout-success">
+            			<h4>${success }</h4>
+            		</div>
+            	</c:if>
 
-                <s:form method="post" modelAttribute="users" action="${pageContext.request.contextPath}/users/add" role="form">
+                <s:form method="post" modelAttribute="tickets" action="${pageContext.request.contextPath}/tickets/send" role="form">
                 <div class="card-body">
                 
                   <div class="form-group">
-                    <label for="username">Username</label>
-                    <s:input path="username" cssClass="form-control" id="username"/>
+                    <label for="title">Title</label>
+                    <s:input path="title" cssClass="form-control" id="title"/>
                   </div>
                   
                   <div class="form-group">
-                    <label for="password">Password</label>
-                    <s:password path="password" cssClass="form-control" id="password"/>
+                    <label for="description">Description</label>
+                    <s:textarea path="description" cols="20" rows="5" cssClass="form-control" id="description"/>
                   </div>
                   
                   <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <s:input path="fullName" cssClass="form-control" id="fullName"/>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <s:input path="email" cssClass="form-control" id="email"/>
-                  </div>
-                  
-                  <div class="form-group">
-                  	<label>Role</label>
-                  	<s:select path="role" class="form-control">
-                  		<s:option value="1">Admin</s:option>
-                  		<s:option value="2">Employee</s:option>
-                  		<s:option value="3">User</s:option>
-
-                  	</s:select>
+                  	<label>Category</label>
+                  	<s:select path="category.id"
+                  		items="${category }"
+                  		itemLabel="name"
+                  		itemValue="id"
+                  	 	class="form-control"></s:select>
                   
                   </div>
-                  
-                  <div class="checkbox">
-                  	<label>
-                  		<s:checkbox path="status" /> Status
-                  	</label>
-                  </div>
-                 
                 </div>
-               
                 <!-- /.card-body -->
-
+                
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Save</button>
                 </div>

@@ -36,7 +36,6 @@ public class LoginController {
     public String logout() {
         return "redirect:/login-panel/login?logout";
     }
-    //The Authentication here may be incorrect and need to be revisited during testing.
 
     @RequestMapping(value = "accessDenied", method = RequestMethod.GET)
     public String accessDenied(Authentication authentication, ModelMap modelMap) {
@@ -48,7 +47,6 @@ public class LoginController {
         return "login.accessDenied";
     }
 
-    //Use Authentication authentication in parameters?
     @RequestMapping(value = "welcome", method = RequestMethod.GET)
     public String welcome() {
     	return "redirect:/dashboard";

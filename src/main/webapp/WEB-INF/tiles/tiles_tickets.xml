@@ -8,5 +8,13 @@
 	<definition name="tickets.send" extends="my_template">
 		<put-attribute name="content" value="/WEB-INF/views/tickets/send.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="tickets.history" extends="my_template">
+		<put-attribute name="content" value="/WEB-INF/views/tickets/history.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="tickets.details" extends="my_template">
+		<put-attribute name="content" value="/WEB-INF/views/tickets/details.jsp"></put-attribute>
+	</definition>
 
 </tiles-definitions>

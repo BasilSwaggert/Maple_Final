@@ -10,13 +10,15 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 @Configuration
 public class TemplateConfiguration implements WebMvcConfigurer {
 
+	//Basic view resolver
     @Bean
     public UrlBasedViewResolver viewResolver() {
         UrlBasedViewResolver resolver = new UrlBasedViewResolver();
         resolver.setViewClass(TilesView.class);
         return resolver;
     }
-//    //Commented due to not having implemented these files in the current build
+
+    //Needed to set up Apache Tiles to organize my front end, manages my JSP.
     @Bean
     public TilesConfigurer tilesConfigurer() {
         TilesConfigurer configurer = new TilesConfigurer();

@@ -27,7 +27,6 @@ public class UsersController {
         return "users.index";
     }
 
-    //Authentication used here may be incorrect
     @RequestMapping(value = "profile", method = RequestMethod.GET)
     public String profile(Authentication authentication, ModelMap modelMap) {
         modelMap.put("users", usersService.findByUsername(authentication.getName()));

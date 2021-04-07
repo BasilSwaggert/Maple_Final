@@ -8,8 +8,4 @@ import com.caseStudy.spring.entities.Category;
 @Repository("categoryRepository")
 public interface CategoryRepository extends CrudRepository<Category, Integer> {
 
-//	void deleteById(int id);
-//
-//	Object findById(int id);
-
 }
