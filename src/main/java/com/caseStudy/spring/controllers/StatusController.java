@@ -48,7 +48,7 @@ public class StatusController {
     public String edit(@PathVariable("id") int id, ModelMap modelMap) {
     	Status status = statusService.find(id);
         modelMap.put("status", status);
-        return "status.add";
+        return "status.edit";
     }
     
     @RequestMapping(value = "edit", method = RequestMethod.POST)

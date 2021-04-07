@@ -5,11 +5,11 @@
 
     <section class="content-header">
     	<h1>
-    		Add Users
+    		Edit Users
     	</h1><br>
     	<ol class="breadcrumb">
     		<li><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
-    		<li class="active">Add Users</li>
+    		<li class="active">Edit Users</li>
     	</ol>
     </section>
     
@@ -27,7 +27,7 @@
             		</div>
             	</c:if>
 
-                <s:form method="post" modelAttribute="users" action="${pageContext.request.contextPath}/users/add" role="form">
+                <s:form method="post" modelAttribute="users" action="${pageContext.request.contextPath}/users/edit" role="form">
                 <div class="card-body">
                 
                   <div class="form-group">
@@ -73,6 +73,7 @@
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Save</button>
+                  <s:hidden path="id"/>
                 </div>
               </s:form>
             </div>

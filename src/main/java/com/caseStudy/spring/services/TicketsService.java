@@ -6,7 +6,7 @@ import com.caseStudy.spring.entities.Tickets;
 
 public interface TicketsService {
 
-//    public Tickets save(Tickets tickets);
+    public Tickets save(Tickets tickets);
 //
 //    public List<Tickets> findTicketsByUsername(String username);
 //    

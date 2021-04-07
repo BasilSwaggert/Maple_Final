@@ -48,7 +48,7 @@ public class CategoryController {
     public String edit(@PathVariable("id") int id, ModelMap modelMap) {
     	Category category = categoryService.find(id);
         modelMap.put("category", category);
-        return "category.add";
+        return "category.edit";
     }
     
     @RequestMapping(value = "edit", method = RequestMethod.POST)

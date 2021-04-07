@@ -11,20 +11,20 @@ import com.caseStudy.spring.repositories.TicketsRepository;
 @Service("ticketsService")
 public class TicketsServiceImpl implements TicketsService {
 
-//    @Autowired 
-//    private TicketsRepository ticketsRepository;
-//
+    @Autowired 
+    private TicketsRepository ticketsRepository;
+
 //    @Autowired
-//    private AccountRepository accountRepository;
+//    private UsersRepository usersRepository;
 //
-//    @Override
-//    public Tickets save(Tickets tickets) {
-//        return ticketsRepository.save(tickets);
-//    }
+    @Override
+    public Tickets save(Tickets tickets) {
+        return ticketsRepository.save(tickets);
+    }
 //
 //    @Override
 //    public List<Tickets> findTicketsByUsername(String username) {
-//        Account account = accountRepository.findByUsername(username);
+//        Users users = usersRepository.findByUsername(username);
 //        return ticketsRepository.findTicketsById(account.getId());
 //    }
 //

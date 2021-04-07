@@ -5,8 +5,20 @@
 		
 <tiles-definitions>
 
+	<definition name="users.index" extends="my_template">
+		<put-attribute name="content" value="/WEB-INF/views/users/index.jsp"></put-attribute>
+	</definition>
+
 	<definition name="users.profile" extends="my_template">
 		<put-attribute name="content" value="/WEB-INF/views/users/profile.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="users.add" extends="my_template">
+		<put-attribute name="content" value="/WEB-INF/views/users/add.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="users.edit" extends="my_template">
+		<put-attribute name="content" value="/WEB-INF/views/users/edit.jsp"></put-attribute>
 	</definition>
 
 </tiles-definitions>

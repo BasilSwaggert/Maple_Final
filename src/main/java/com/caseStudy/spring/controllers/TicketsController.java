@@ -1,6 +1,7 @@
 package com.caseStudy.spring.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,7 +25,7 @@ public class TicketsController {
     private CategoryService categoryService;
 
     @RequestMapping(value = "send", method = RequestMethod.GET)
-    public String send(ModelMap modelMap) {
+    public String send(Authentication authentication, ModelMap modelMap) {
         Tickets tickets = new Tickets();
         modelMap.put("tickets", tickets);
         modelMap.put("category", categoryService.findAll());

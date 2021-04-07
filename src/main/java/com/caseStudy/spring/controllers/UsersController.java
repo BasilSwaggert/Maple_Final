@@ -20,6 +20,12 @@ public class UsersController {
 
 	@Autowired
     private UsersService usersService;
+	
+	@RequestMapping(value = { "", "index" }, method = RequestMethod.GET)
+    public String index(ModelMap modelMap) {
+        modelMap.put("users", usersService.findAll());
+        return "users.index";
+    }
 
     //Authentication used here may be incorrect
     @RequestMapping(value = "profile", method = RequestMethod.GET)
@@ -29,34 +35,58 @@ public class UsersController {
     }
 
     @RequestMapping(value = "profile", method = RequestMethod.POST)
-    public String profile(@ModelAttribute("users") Users account) {
-        Users currentAccount = usersService.findByUsername(account.getUsername());
-        if (!account.getPassword().isEmpty()) {
-            currentAccount.setPassword(new BCryptPasswordEncoder().encode(account.getPassword()));
+    public String profile(@ModelAttribute("users") Users users) {
+        Users currentusers = usersService.findByUsername(users.getUsername());
+        if (!users.getPassword().isEmpty()) {
+            currentusers.setPassword(new BCryptPasswordEncoder().encode(users.getPassword()));
         }
-        currentAccount.setEmail(account.getEmail());
-        currentAccount.setFullName(account.getFullName());
-        usersService.save(currentAccount);
+        currentusers.setEmail(users.getEmail());
+        currentusers.setFullName(users.getFullName());
+        usersService.save(currentusers);
         return "redirect:/users/profile";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String add(ModelMap modelMap) {
-    	Users account = new Users();
-        modelMap.put("users", account);
+    	Users users = new Users();
+        modelMap.put("users", users);
         return "users.add";
     }
-
+    	//If else for validation
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String add(@ModelAttribute("users") Users account, ModelMap modelMap) {
+    public String add(@ModelAttribute("users") Users users, ModelMap modelMap) {
         try {
-            account.setPassword(new BCryptPasswordEncoder().encode(account.getPassword()));
-            usersService.save(account);
-            return "redirect:/account";
+            users.setPassword(new BCryptPasswordEncoder().encode(users.getPassword()));
+            usersService.save(users);
+            return "redirect:/users";
         } catch (Exception e) {
             modelMap.put("error", "Creation Failed");
             return "users.add";
 
+        }
+    }
+    	//May be passing in empty string
+    @RequestMapping(value = "edit/{id}", method = RequestMethod.GET)
+    public String edit(@PathVariable("id") int id, ModelMap modelMap) {
+        Users users = usersService.find(id);
+        modelMap.put("users", users);
+        return "users.edit";
+    }
+    	//If else for validation
+    @RequestMapping(value = "edit", method = RequestMethod.POST)
+    public String edit(@ModelAttribute("users") Users users, ModelMap modelMap) {
+        try {
+            if (users.getPassword().isEmpty()) {
+                users.setPassword(usersService.find(users.getId()).getPassword());
+            } else {
+                users.setPassword(new BCryptPasswordEncoder().encode(users.getPassword()));
+            }
+            usersService.save(users);
+            return "redirect:/users";
+        } catch (Exception e) {
+            modelMap.put("error", "Update Failed");
+            modelMap.put("users", users);
+            return "users.edit";
         }
     }
 
@@ -68,29 +98,5 @@ public class UsersController {
             redirectAttributes.addFlashAttribute("error", "Deletion Failed");
         }
         return "redirect:/users";
-    }
-
-    @RequestMapping(value = "edit/{id}", method = RequestMethod.GET)
-    public String edit(@PathVariable("id") int id, ModelMap modelMap) {
-        Users account = usersService.find(id);
-        modelMap.put("users", account);
-        return "users.edit";
-    }
-
-    @RequestMapping(value = "edit", method = RequestMethod.POST)
-    public String edit(@ModelAttribute("users") Users account, ModelMap modelMap) {
-        try {
-            if (account.getPassword().isEmpty()) {
-                account.setPassword(usersService.find(account.getId()).getPassword());
-            } else {
-                account.setPassword(new BCryptPasswordEncoder().encode(account.getPassword()));
-            }
-            usersService.save(account);
-            return "redirect:/users";
-        } catch (Exception e) {
-            modelMap.put("error", "Update Failed");
-            modelMap.put("users", account);
-            return "users.edit";
-        }
     }
 }

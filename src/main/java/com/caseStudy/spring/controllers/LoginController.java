@@ -15,16 +15,6 @@ public class LoginController {
 		
     @RequestMapping(value = { "", "index" }, method = RequestMethod.GET)
     public String index() {
-    	BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String password = "123";
-        String encodedPassword = passwordEncoder.encode(password);
-        System.out.println();
-        System.out.println("Password is: " + password);
-        System.out.println("Encoded password is: " + encodedPassword);
-        System.out.println();
-        
-        boolean isPasswordMatch = passwordEncoder.matches(password, encodedPassword);
-        System.out.println("Password : " + password + "   isPasswordMatch    : " + isPasswordMatch);
         return "redirect:/login-panel/login";
     }
 
@@ -60,15 +50,7 @@ public class LoginController {
 
     //Use Authentication authentication in parameters?
     @RequestMapping(value = "welcome", method = RequestMethod.GET)
-    public String welcome(Authentication authentication) {
-        boolean hasEmployeeRole = authentication.getAuthorities().stream()
-                .anyMatch(r -> r.getAuthority().equals("ROLE_EMPLOYEE"));
-        boolean hasAdminRole = authentication.getAuthorities().stream()
-                .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"));
-        if (hasAdminRole) {
-            return "redirect:/admin/dashboard";
-        } else {
-            return "redirect:/employee/dashboard";
-        }
+    public String welcome() {
+    	return "redirect:/dashboard";
     }
 }

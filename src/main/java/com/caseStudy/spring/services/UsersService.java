@@ -10,7 +10,7 @@ public interface UsersService extends UserDetailsService {
 
 	public Iterable<Users> findAll();
 
-    public Users save(Users user);
+    public Users save(Users users);
 
     public Users findByUsername(String username);
 

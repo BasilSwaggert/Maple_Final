@@ -8,10 +8,10 @@
 </head>
 <body>
 
-	<h3>Access Denied to the Client Panel</h3>
+	<h3>Access Denied</h3>
 	${msg}
 	<br>
-	<a href="${pageContext.request.contextPath }/customer-panel">Back</a>
+	<a href="${pageContext.request.contextPath }/dashboard">Back</a>
 
 </body>
 </html>
