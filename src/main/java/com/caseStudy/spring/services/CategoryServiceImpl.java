@@ -1,12 +1,12 @@
 package com.caseStudy.spring.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.caseStudy.spring.entities.Category;
 import com.caseStudy.spring.repositories.CategoryRepository;
 
+//Class implements the business logic of CategoryService
 @Service("categoryService")
 public class CategoryServiceImpl implements CategoryService {
 

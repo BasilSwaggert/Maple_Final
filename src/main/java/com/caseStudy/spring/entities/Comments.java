@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
-
+//This class is the Comments Entity and it maps to the database, this overall is not yet implemented
 @Entity
 public class Comments implements Serializable {
 	

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.caseStudy.spring.entities.Status;
 
+//Repository for Status
 @Repository("statusRepository")
 public interface StatusRepository extends CrudRepository<Status, Integer> {
 

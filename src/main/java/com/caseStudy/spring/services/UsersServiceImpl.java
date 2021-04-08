@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.caseStudy.spring.entities.Users;
 import com.caseStudy.spring.repositories.UsersRepository;
 
+//Class implements the business logic of UsersService
 @Service("usersService")
 public class UsersServiceImpl implements UsersService {
 	

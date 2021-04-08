@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.caseStudy.spring.entities.Comments;
 
+//Repository for Comments
 @Repository("commentsRepository")
 public interface CommentsRepository extends CrudRepository<Comments, Integer> {
 

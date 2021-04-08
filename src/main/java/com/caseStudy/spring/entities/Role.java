@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+//This class is the Role Entity and it maps to the database
 @Entity
 public class Role implements Serializable {
 

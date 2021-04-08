@@ -7,6 +7,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
 
+//This class controls how my front end is viewed by implementing Apache Tiles.
 @Configuration
 public class TemplateConfiguration implements WebMvcConfigurer {
 

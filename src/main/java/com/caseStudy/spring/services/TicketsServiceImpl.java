@@ -10,6 +10,7 @@ import com.caseStudy.spring.entities.Users;
 import com.caseStudy.spring.repositories.TicketsRepository;
 import com.caseStudy.spring.repositories.UsersRepository;
 
+//Class implements the business logic of TicketsService
 @Service("ticketsService")
 public class TicketsServiceImpl implements TicketsService {
 

@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+//This class is the Tickets Entity and it maps to the database
 @Entity
 public class Tickets implements Serializable {
 

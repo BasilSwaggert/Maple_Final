@@ -18,7 +18,7 @@ import com.caseStudy.spring.services.CategoryService;
 import com.caseStudy.spring.services.TicketsService;
 import com.caseStudy.spring.services.UsersService;
 
-
+//Class controls the ticket submission proccess
 @Controller
 @RequestMapping(value = "tickets")
 public class TicketsController {
@@ -32,6 +32,7 @@ public class TicketsController {
     @Autowired
     private UsersService usersService;
 
+    //Method controls the viewing and layout of the ticket submission page
     @RequestMapping(value = "send", method = RequestMethod.GET)
     public String send(ModelMap modelMap) {
         Tickets tickets = new Tickets();
@@ -40,6 +41,7 @@ public class TicketsController {
         return "tickets.send";
     }
 
+    //Method add the ticket to the program and to the database
     @RequestMapping(value = "send", method = RequestMethod.POST)
     public String send(@ModelAttribute("tickets") Tickets tickets,
                        Authentication authentication, RedirectAttributes redirectAttributes) {
@@ -56,12 +58,14 @@ public class TicketsController {
         return "redirect:/tickets/send";
     }
 
+    //Pulls up all submitted tickets indexed to the userId
     @RequestMapping(value = "history", method = RequestMethod.GET)
     public String history(Authentication authentication, ModelMap modelMap) {
         modelMap.put("tickets", ticketsService.findTicketsByUsername(authentication.getName()));
         return "tickets.history";
     }
     
+    //Pulls up the details and layout of the ticket
     @RequestMapping(value = "details/{id}", method = RequestMethod.GET)
     public String details(@PathVariable("id") int id, ModelMap modelMap) {
         modelMap.put("tickets", ticketsService.find(id));

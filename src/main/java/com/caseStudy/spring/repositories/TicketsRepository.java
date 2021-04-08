@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.caseStudy.spring.entities.Tickets;
 
+//Repository for Tickets
 @Repository("ticketsRepository")
 public interface TicketsRepository extends CrudRepository<Tickets, Integer> {
 	

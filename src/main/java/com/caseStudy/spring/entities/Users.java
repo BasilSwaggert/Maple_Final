@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+//This class is the User Entity and it maps to the database
 @Entity(name="user")
 public class Users implements Serializable {
 

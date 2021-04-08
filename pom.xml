@@ -77,14 +77,13 @@
 			<version>1.1.2</version>
 		</dependency>
 		<dependency>
-  <groupId>javax.servlet</groupId>
-  <artifactId>javax.servlet-api</artifactId>
-</dependency>
+  			<groupId>javax.servlet</groupId>
+  			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
 		<dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-taglibs</artifactId>
-    <version>5.2.2.RELEASE</version>
-</dependency>
+    		<groupId>org.springframework.security</groupId>
+    		<artifactId>spring-security-taglibs</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp.jstl</groupId>
 			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
@@ -99,6 +98,16 @@
             <artifactId>jbcrypt</artifactId>
 	    <version>0.3m</version>
         </dependency>
+        <dependency>
+   			<groupId>org.mockito</groupId>
+   			<artifactId>mockito-core</artifactId>
+		</dependency>
+		<dependency>
+    		<groupId>org.hamcrest</groupId>
+    		<artifactId>hamcrest-all</artifactId>
+    		<version>1.3</version>
+    		<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -1,14 +1,12 @@
 package com.caseStudy.spring.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.caseStudy.spring.entities.Status;
 import com.caseStudy.spring.repositories.StatusRepository;
 
-
-
+//Class implements the business logic of StatusService
 @Service("statusService")
 public class StatusServiceImpl implements StatusService{
 

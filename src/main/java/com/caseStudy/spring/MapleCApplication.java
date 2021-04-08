@@ -2,11 +2,10 @@ package com.caseStudy.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.web.bind.annotation.RequestMapping;
 
+//This is the main runner of the program and it runs the application
 @SpringBootApplication
 public class MapleCApplication extends SpringBootServletInitializer {
 
