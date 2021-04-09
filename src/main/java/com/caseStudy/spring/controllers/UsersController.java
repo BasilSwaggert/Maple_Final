@@ -94,7 +94,7 @@ public class UsersController {
             usersService.save(users);
             return "redirect:/users";
         } catch (Exception e) {
-            modelMap.put("error", "Update Failed");
+            modelMap.put("err", "Update Failed");
             modelMap.put("users", users);
             return "users.edit";
         }

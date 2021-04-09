@@ -35,4 +35,9 @@ public class TicketsServiceImpl implements TicketsService {
     public Tickets find(int id) {
     	return ticketsRepository.findById(id).get();
     }
+
+	@Override
+	public List<Tickets> findTicketsById(int id) {
+		return null;
+	}
 }

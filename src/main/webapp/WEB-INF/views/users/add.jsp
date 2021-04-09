@@ -30,6 +30,7 @@
                 <s:form method="post" modelAttribute="users" action="${pageContext.request.contextPath}/users/add" role="form">
                 <div class="card-body">
                 
+                
                   <div class="form-group">
                     <label for="username">Username</label>
                     <s:input path="username" cssClass="form-control" id="username"/>

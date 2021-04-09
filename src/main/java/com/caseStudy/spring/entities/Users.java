@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
 
 //This class is the User Entity and it maps to the database
 @Entity(name="user")
@@ -36,8 +37,8 @@ public class Users implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
-    @OneToMany(fetch = FetchType.LAZY)
-    private Set<Tickets> ticketsForUserId = new HashSet<Tickets>(0);
+//    @OneToMany(fetch = FetchType.LAZY)
+//    private Set<Tickets> ticketsForUserId = new HashSet<Tickets>(0);
 
     public Users() {
         super();
@@ -108,11 +109,11 @@ public class Users implements Serializable {
         this.email = email;
     }
 
-    public Set<Tickets> getTicketsForUserId() {
-        return this.ticketsForUserId;
-    }
-
-    public void setTicketsForUserId(Set<Tickets> ticketsForUserId) {
-        this.ticketsForUserId = ticketsForUserId;
-    }
+//    public Set<Tickets> getTicketsForUserId() {
+//        return this.ticketsForUserId;
+//    }
+//
+//    public void setTicketsForUserId(Set<Tickets> ticketsForUserId) {
+//        this.ticketsForUserId = ticketsForUserId;
+//    }
 }
