@@ -2,22 +2,24 @@
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
- <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Users List</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-             <li><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
-              <li class="breadcrumb-item active">Users List</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+
+<section class="content-header">
+   <div class="container-fluid">
+     <div class="row mb-2">
+       <div class="col-sm-6">
+         <h1>User List</h1>
+       </div>
+       <div class="col-sm-6">
+         <ol class="breadcrumb float-sm-right">
+           <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>
+           Dashboard</a></li>
+           <li class="breadcrumb-item active">
+           User List</li>
+         </ol>
+       </div>
+     </div>
+   </div><!-- /.container-fluid -->
+</section>
     
     <!-- Main content -->
     <section class="content">
@@ -39,6 +41,7 @@
                     <th>Id</th>
                     <th>Username</th>
                     <th>Full Name</th>
+                    <th>Email</th>
                     <th>Status</th>
                     <th>Role</th>
                     <th>Action</th>     
@@ -50,6 +53,7 @@
                     	<td>${users.id }</td>
                     	<td>${users.username }</td>
                     	<td>${users.fullName }</td>
+                    	<td>${users.email }</td>
                     	<td>${users.status ? "Show" : "Hide" }</td>
                     	<td>${users.role.name }</td>
                     	<td>
@@ -64,6 +68,7 @@
                 	<th>Id</th>
                     <th>Username</th>
                     <th>Full Name</th>
+                    <th>Email</th>
                     <th>Status</th>
                     <th>Role</th>
                     <th>Action</th> 

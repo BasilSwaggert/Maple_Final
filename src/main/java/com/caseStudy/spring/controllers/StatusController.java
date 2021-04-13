@@ -64,7 +64,7 @@ public class StatusController {
             return "redirect:/status";
     	} catch (Exception e) {
     		modelMap.put("err", "Status Update Failed");
-    		modelMap.put("category", status);
+    		modelMap.put("status", status);
     		return "status.edit";
     	}
     }

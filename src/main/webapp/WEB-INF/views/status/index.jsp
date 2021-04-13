@@ -2,22 +2,23 @@
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
- <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Status List</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-             <li><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
-              <li class="breadcrumb-item active">Status List</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+<section class="content-header">
+   <div class="container-fluid">
+     <div class="row mb-2">
+       <div class="col-sm-6">
+         <h1>Status List</h1>
+       </div>
+       <div class="col-sm-6">
+         <ol class="breadcrumb float-sm-right">
+           <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>
+           Dashboard</a></li>
+           <li class="breadcrumb-item active">
+           Status List</li>
+         </ol>
+       </div>
+     </div>
+   </div><!-- /.container-fluid -->
+</section>
     
     <!-- Main content -->
     <section class="content">
@@ -48,7 +49,7 @@
                   	<tr>
                     	<td>${status.id }</td>
                     	<td>${status.name }</td>
-                    	<td><span class="label label-${status.color }">&nbsp;</span></td>
+                    	<td><span class="label label-${status.color }">${status.color }</span></td>
                     	<td>${status.display ? "Show" : "Hide" }</td>
                     	<td>
                     	<a href="${pageContext.request.contextPath}/status/edit/${status.id}">Edit</a> | 

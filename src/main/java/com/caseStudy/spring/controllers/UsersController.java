@@ -38,7 +38,7 @@ public class UsersController {
 
     //Pulls the data for the profile from the database
     @RequestMapping(value = "profile", method = RequestMethod.POST)
-    public String profile(@ModelAttribute("users") Users users) {
+    public String profile(@ModelAttribute("users") Users users, RedirectAttributes redirectAttributes) {
         Users currentusers = usersService.findByUsername(users.getUsername());
         if (!users.getPassword().isEmpty()) {
             currentusers.setPassword(new BCryptPasswordEncoder().encode(users.getPassword()));
@@ -46,6 +46,7 @@ public class UsersController {
         currentusers.setEmail(users.getEmail());
         currentusers.setFullName(users.getFullName());
         usersService.save(currentusers);
+        redirectAttributes.addFlashAttribute("success", "Updated Successfully");
         return "redirect:/users/profile";
     }
 
@@ -106,7 +107,7 @@ public class UsersController {
         try {
         	usersService.delete(id);
         } catch (Exception e) {
-            redirectAttributes.addFlashAttribute("error", "Deletion Failed");
+            redirectAttributes.addFlashAttribute("err", "Deletion Failed");
         }
         return "redirect:/users";
     }

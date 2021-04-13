@@ -38,6 +38,11 @@ public class TicketsServiceImpl implements TicketsService {
 
 	@Override
 	public List<Tickets> findTicketsById(int id) {
-		return null;
+		return (List<Tickets>) ticketsRepository.findById(id).get();
+	}
+
+	@Override
+	public void delete(int id) {
+		ticketsRepository.deleteById(id);
 	}
 }

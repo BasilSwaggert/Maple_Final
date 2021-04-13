@@ -16,5 +16,9 @@
 	<definition name="tickets.details" extends="my_template">
 		<put-attribute name="content" value="/WEB-INF/views/tickets/details.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="tickets.edit" extends="my_template">
+		<put-attribute name="content" value="/WEB-INF/views/tickets/edit.jsp"></put-attribute>
+	</definition>
 
 </tiles-definitions>

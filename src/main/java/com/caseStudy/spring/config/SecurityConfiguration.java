@@ -43,6 +43,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         			.antMatchers("/status/edit/**").access("hasRole('ROLE_ADMIN')")
         			.antMatchers("/status/delete/**").access("hasRole('ROLE_ADMIN')")
         			
+        			.antMatchers("/tickets/history/**").access("hasRole('ROLE_EMPLOYEE') or hasRole('ROLE_ADMIN')")
+        			.antMatchers("/tickets/send/**").access("hasRole('ROLE_EMPLOYEE')")
+        			.antMatchers("/tickets/edit/**").access("hasRole('ROLE_EMPLOYEE')")
+        			.antMatchers("/tickets/details/**").access("hasRole('ROLE_EMPLOYEE') or hasRole('ROLE_ADMIN')")
+        			
         			.and()
         			.formLogin()
         			.loginPage("/login-panel")

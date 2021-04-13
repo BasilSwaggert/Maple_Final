@@ -3,15 +3,23 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-    <section class="content-header">
-    	<h1>
-    		Send Ticket
-    	</h1><br>
-    	<ol class="breadcrumb">
-    		<li><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
-    		<li class="active">Send Ticket</li>
-    	</ol>
-    </section>
+<section class="content-header">
+   <div class="container-fluid">
+     <div class="row mb-2">
+       <div class="col-sm-6">
+         <h1>Send Ticket</h1>
+       </div>
+       <div class="col-sm-6">
+         <ol class="breadcrumb float-sm-right">
+           <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>
+           Dashboard</a></li>
+           <li class="breadcrumb-item active">
+           Send Ticket</li>
+         </ol>
+       </div>
+     </div>
+   </div><!-- /.container-fluid -->
+</section>
     
     <section class="content">
       <div class="container-fluid">
@@ -38,12 +46,12 @@
                 
                   <div class="form-group">
                     <label for="title">Title</label>
-                    <s:input path="title" cssClass="form-control" id="title"/>
+                    <s:input path="title" cssClass="form-control" id="title"  placeholder="20 Characters or fewer"/>
                   </div>
                   
                   <div class="form-group">
                     <label for="description">Description</label>
-                    <s:textarea path="description" cols="20" rows="5" cssClass="form-control" id="description"/>
+                    <s:textarea path="description" cols="20" rows="5" cssClass="form-control" id="description"  placeholder="Please enter a detailed description of your issue"/>
                   </div>
                   
                   <div class="form-group">
@@ -53,8 +61,18 @@
                   		itemLabel="name"
                   		itemValue="id"
                   	 	class="form-control"></s:select>
-                  
                   </div>
+                  
+                  <div class="form-group">
+                  	<label>Status</label>
+                  	<s:select path="status" class="form-control">
+                  		<s:option value="3">New</s:option>
+                  		<s:option value="8">Requires Follow-Up</s:option>
+                  		<s:option value="7">Critical</s:option>
+
+                  	</s:select>
+                  </div>
+                  
                 </div>
                 <!-- /.card-body -->
                 

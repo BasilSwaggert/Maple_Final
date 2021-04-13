@@ -96,9 +96,11 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
+    <div class="contentcontainer med left" style="margin-left: 45px;">
     <a href="${pageContext.request.contextPath}/dashboard" class="logo">
       <span class="logo-lg"><h1><b>MAPLE</b></h1></span>
     </a>
+    </div>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -160,7 +162,22 @@
         				Add</a></li>
         			<li><a href="${pageContext.request.contextPath}/users/index"><i
         				class="fa fa-circle-o"></i>
-        				List</a></li>
+        				List</a></li>	
+        		
+        		</ul></li>
+        		
+        		<li class="treeview"><a href="#"> <i class="fa fa-laptop"></i>
+        	<span>Tickets</span> <span class="pull-right-container">
+        		<i class="fa fa-angle-left pull-right"></i>
+        		</span>
+        	</a>
+        		<ul class="treeview-menu">
+        			<li><a href="${pageContext.request.contextPath}/tickets/send"><i
+        				class="fa fa-circle-o"></i>
+        				Send</a></li>
+        			<li><a href="${pageContext.request.contextPath}/tickets/history"><i
+        				class="fa fa-circle-o"></i>
+        				History</a></li>
         		
         		</ul></li>
         		

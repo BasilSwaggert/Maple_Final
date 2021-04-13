@@ -3,15 +3,23 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-    <section class="content-header">
-    	<h1>
-    		Add Status
-    	</h1><br>
-    	<ol class="breadcrumb">
-    		<li><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
-    		<li class="active">Add Status</li>
-    	</ol>
-    </section>
+<section class="content-header">
+   <div class="container-fluid">
+     <div class="row mb-2">
+       <div class="col-sm-6">
+         <h1>Add Status</h1>
+       </div>
+       <div class="col-sm-6">
+         <ol class="breadcrumb float-sm-right">
+           <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>
+           Dashboard</a></li>
+           <li class="breadcrumb-item active">
+           Add Status</li>
+         </ol>
+       </div>
+     </div>
+   </div>
+</section>
     
     <section class="content">
       <div class="container-fluid">
@@ -32,7 +40,7 @@
                 
                   <div class="form-group">
                     <label for="name">Name</label>
-                    <s:input path="name" cssClass="form-control" id="name"/>
+                    <s:input path="name" cssClass="form-control" id="name" placeholder="Please enter the name of the new status"/>
                   </div>
                   
                   <div class="form-group">

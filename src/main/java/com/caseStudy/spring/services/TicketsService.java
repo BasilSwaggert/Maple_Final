@@ -17,5 +17,7 @@ public interface TicketsService {
     public Tickets find(int id);
 
 	List<Tickets> findTicketsByUsername(String username);
+
+	public void delete(int id);
     
 }

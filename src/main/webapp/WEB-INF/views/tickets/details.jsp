@@ -3,22 +3,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
- <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Ticket Details</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-             <li><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
-              <li class="breadcrumb-item active">Ticket Details</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+<section class="content-header">
+   <div class="container-fluid">
+     <div class="row mb-2">
+       <div class="col-sm-6">
+         <h1>Ticket Details</h1>
+       </div>
+       <div class="col-sm-6">
+         <ol class="breadcrumb float-sm-right">
+           <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/dashboard"><i class="fa fa-dashboard"></i>
+           Dashboard</a></li>
+           <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/tickets/history"><i class="fa fa-dashboard"></i>
+           Ticket History</a></li>
+           <li class="breadcrumb-item active">
+           Ticket Details</li>
+         </ol>
+       </div>
+     </div>
+   </div>
+</section>
     
     <!-- Main content -->
 <div class="invoice p-3 mb-3">
@@ -35,28 +38,33 @@
               <!-- info row -->
               <div class="row invoice-info">
                 <div class="col-sm-4 invoice-col">
-                  Ticket Submitter:
+                  <strong>Ticket Submitter:</strong>
                   <address>
-                    <strong>${tickets.accountByUserId.fullName }</strong>
+                    ${tickets.accountByUserId.fullName }
                     <br>
                     Email: ${tickets.accountByUserId.email }
                   </address>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
-                  Ticket Owner:
+                  <strong>Ticket Owner:</strong>
                   <address>
-                    <strong>${tickets.accountByUserId.fullName }</strong>
+                    ${tickets.accountByUserId.fullName }
                     <br>
                     Email: ${tickets.accountByUserId.email }
                   </address>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
-                  <b>Ticket Id:</b> #${tickets.id }<br>
+                <strong>Details:</strong>
+                	<address>
+                  Ticket Id: #${tickets.id }<br>
                   <fmt:formatDate var="createdDate" 
                   		value="${tickets.createdDate }" pattern="MM/dd/yyyy" />
-                  <b>Created Date:</b> ${createdDate }<br>
+                  Created Date: ${createdDate }<br>
+                  Category: ${tickets.category.name}<br>
+                  Status: ${tickets.status.name}
+                	</address>
                 </div>
                 <!-- /.col -->
               </div>
